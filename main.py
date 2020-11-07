@@ -69,7 +69,7 @@ async def main():
     async def restart(event):
 
         await event.respond(f'k')
-
+        await bot.disconnect()
 
 
 

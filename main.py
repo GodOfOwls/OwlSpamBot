@@ -42,7 +42,7 @@ async def main():
                   f'' \
                   f'Time of the Ban: {Code(ban.date)}\n' \
                   f'Reason for the Ban: {Code(ban.reason)}\n' \
-                  f'Offending Message (if on record):\n {Code(ban.message) if ban.message else Code("-")}\n' \
+                  f'Offending Message (if on record):\n {Code(ban.message) if ban.message else Code("")}\n' \
                   f'\n\n\nPowered by @GodOfOwls'
 
         await event.respond(message)
@@ -61,7 +61,7 @@ async def main():
                   f'' \
                   f'Time of the Ban: {Code(ban.date)}\n' \
                   f'Reason for the Ban: {Code(ban.reason)}\n' \
-                  f'Offending Message (if on record):\n {Code(ban.message) if ban.message else Code("-")}\n' \
+                  f'Offending Message (if on record):\n {Code(ban.message) if ban.message else Code("")}\n' \
                   f'\n\n\nPowered by @GodOfOwls\n using the official @Spamwatch API'
         await event.respond(message)
 

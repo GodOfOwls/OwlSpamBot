@@ -25,7 +25,7 @@ async def main():
     async def start(event):
         await event.respond(f'Helluwu, \n'
                             f'you can check if an id is banned in @SpamWatch or @OwlAntispam by doing:\n'
-                            f'/spamwatch [id] to check in SpamWatch'
+                            f'/spamwatch [id] to check in SpamWatch\n'
                             f'/ebg [id] to check in OwlAntispam')
 
     @bot.on(events.NewMessage(pattern='/ebg', forwards=False))

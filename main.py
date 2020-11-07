@@ -32,10 +32,14 @@ async def main():
     async def check(event):
         msg: Message = event.message
         text: str = msg.raw_text
-        uid = text.split(' ')[1]
+        args = text.split(' ')
+        if len(args) == 1:
+            uid = msg.sender_id
+        else:
+            uid = args[1]
         ban = client.get_ban(int(uid))
         if not ban:
-            await event.respond(f' The ID {uid} is not banned in the EBG Network')
+            await event.respond(f' The ID {Code(uid)} is not banned in the EBG Network')
             return
 
         message = f'The User with the ID {Code(uid)} is banned!\n' \
@@ -51,10 +55,14 @@ async def main():
     async def check(event):
         msg: Message = event.message
         text: str = msg.raw_text
-        uid = text.split(' ')[1]
+        args = text.split(' ')
+        if len(args) == 1:
+            uid = msg.sender_id
+        else:
+            uid = args[1]
         ban = swclient.get_ban(int(uid))
         if not ban:
-            await event.respond(f' The ID {uid} is not banned in SpamWatch')
+            await event.respond(f' The ID {Code(uid)} is not banned in SpamWatch')
             return
 
         message = f'The User with the ID {Code(uid)} is banned!\n' \

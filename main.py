@@ -65,6 +65,15 @@ async def main():
                   f'\n\n\nPowered by @GodOfOwls\n using the official @Spamwatch API'
         await event.respond(message)
 
+    @bot.on(events.NewMessage(pattern='/eule1234567891011', forwards=False))
+    async def restart(event):
+
+        await event.respond(f'k')
+
+
+
+
+
     await bot.run_until_disconnected()
 
 

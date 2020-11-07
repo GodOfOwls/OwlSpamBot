@@ -32,17 +32,17 @@ async def main():
     async def check(event):
         msg: Message = event.message
         text: str = msg.raw_text
-        id = text.split(' ')[1]
-        ban = client.get_ban(id)
+        uid = text.split(' ')[1]
+        ban = client.get_ban(int(uid))
         if not ban:
-            await event.respond(f' The ID {id} is not banned in the EBG Network')
+            await event.respond(f' The ID {uid} is not banned in the EBG Network')
             return
 
-        message = f'The User with the ID {Code(id)} is banned!\n' \
+        message = f'The User with the ID {Code(uid)} is banned!\n' \
                   f'' \
                   f'Time of the Ban: {Code(ban.date)}\n' \
                   f'Reason for the Ban: {Code(ban.reason)}\n' \
-                  f'Offending Message (if on record):\n {Code(ban.message) if ban.message else Code("Fehlt")}\n' \
+                  f'Offending Message (if on record):\n {Code(ban.message) if ban.message else Code("-")}\n' \
                   f'\n\n\nPowered by @GodOfOwls'
 
         await event.respond(message)
@@ -51,17 +51,17 @@ async def main():
     async def check(event):
         msg: Message = event.message
         text: str = msg.raw_text
-        id = text.split(' ')[1]
-        ban = swclient.get_ban(id)
+        uid = text.split(' ')[1]
+        ban = swclient.get_ban(int(uid))
         if not ban:
-            await event.respond(f' The ID {id} is not banned in SpamWatch')
+            await event.respond(f' The ID {uid} is not banned in SpamWatch')
             return
 
-        message = f'The User with the ID {Code(id)} is banned!\n' \
+        message = f'The User with the ID {Code(uid)} is banned!\n' \
                   f'' \
                   f'Time of the Ban: {Code(ban.date)}\n' \
                   f'Reason for the Ban: {Code(ban.reason)}\n' \
-                  f'Offending Message (if on record):\n {Code(ban.message) if ban.message else Code("Fehlt")}\n' \
+                  f'Offending Message (if on record):\n {Code(ban.message) if ban.message else Code("-")}\n' \
                   f'\n\n\nPowered by @GodOfOwls\n using the official @Spamwatch API'
         await event.respond(message)
 

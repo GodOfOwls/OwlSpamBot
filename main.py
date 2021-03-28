@@ -10,7 +10,7 @@ from telethon.tl import functions, types
 from telethon.tl.custom import Message
 
 client = spamwatch.Client(ebg_token,
-                          host='https://kantek.eule.computer')
+                          host='https://antispam.godofowls.eu')
 swclient = spamwatch.Client(sw_token)
 
 
